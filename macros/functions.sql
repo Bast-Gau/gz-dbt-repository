@@ -1,3 +1,5 @@
-{% macro margin_percent (turnover,purchase_cost)%}
-ROUND(SAFE_DIVIDE({{ turnover }} - {{ purchase_cost }} / {{ turnover }}) * 100,2) AS margin_percent
+{% macro margin_percent (revenue,purchase_cost)%}
+ROUND(SAFE_DIVIDE({{ revenue }} - {{ purchase_cost }}, {{ revenue }}) * 100,2) 
 {% endmacro %}
+
+
