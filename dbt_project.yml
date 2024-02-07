@@ -39,5 +39,5 @@ models:
     mart:
       materialized: table
       finance:
-        schema: dbt_bgautier
+        schema: finance
     
