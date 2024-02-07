@@ -1,6 +1,6 @@
 SELECT 
 fd.date_date,
-SUM(operational_margin - ads_cost) AS ads_margin
+IFNULL(SUM(operational_margin - ads_cost), SUM(operational_margin)) AS ads_margin
  ,SUM(fd.nb_transactions) AS nb_transactions
     ,ROUND(SUM(fd.revenue),0) AS revenue 
     ,ROUND(AVG(fd.revenue),1) AS average_basket
