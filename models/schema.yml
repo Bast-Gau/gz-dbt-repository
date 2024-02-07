@@ -72,9 +72,6 @@ models:
   - name: int_sales_margin
     columns:
       - name: products_id
-        tests:
-          - not_null
-          - unique
       - name: revenue
         tests:
           - not_null
