@@ -47,6 +47,41 @@ sources:
             description: log costs per product
           - name: ship_cost
             description: ship costs per order
+
+      
+      - name: adwords
+        identifier: raw_gz_adwords
+        description: campaigns generated through adwords / we have one row per date and campaign
+        columns:
+          - name: date_date
+            description: date of campagin
+          - name: paid_source
+            description: source name of campaign publisher
+          - name: campaign_key
+            description: key of the campaign
+          - name: camPGNname
+            description: name of the campaign
+          - name: ads_cost
+            description: cost of the campaign
+          - name: impression
+            description: number of impression per campaign and date
+          - name : click
+            description: number of click per campaign and date
+        tests :
+         -  unique:
+              column_name: "(date_date || '_' || campaign_key)"
+
+      - name: bing
+        identifier: raw_gz_bing
+
+      - name: criteo
+        identifier: raw_gz_criteo
+      
+      - name: facebook
+        identifier: raw_gz_facebook
+
+
+
 models:
   - name: int_orders_margin
     columns:
